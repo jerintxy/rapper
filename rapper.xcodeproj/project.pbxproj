@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A1B2C3D4E5F6071829304050 /* OpenRouter in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F6071829304052 /* OpenRouter */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		EE6CF12E30903E6F0069185D /* rapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B2C3D4E5F6071829304050 /* OpenRouter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = rapper;
 			packageProductDependencies = (
+				A1B2C3D4E5F6071829304052 /* OpenRouter */,
 			);
 			productName = rapper;
 			productReference = EE6CF12E30903E6F0069185D /* rapper.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = EE6CF12530903E6F0069185D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A1B2C3D4E5F6071829304051 /* XCLocalSwiftPackageReference "Packages/swift-openrouter" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EE6CF12F30903E6F0069185D /* Products */;
 			projectDirPath = "";
@@ -339,6 +348,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A1B2C3D4E5F6071829304051 /* XCLocalSwiftPackageReference "Packages/swift-openrouter" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "Packages/swift-openrouter";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1B2C3D4E5F6071829304052 /* OpenRouter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D4E5F6071829304051 /* XCLocalSwiftPackageReference "Packages/swift-openrouter" */;
+			productName = OpenRouter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE6CF12630903E6F0069185D /* Project object */;
 }

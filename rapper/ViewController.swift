@@ -8,6 +8,8 @@
 import UIKit
 
   final class ViewController: UIViewController {
+      private let chatService = RapperChatService()
+
       private let promptField: UITextField = {
           let field = UITextField()
           field.placeholder = "Ask the rap mentor…"
@@ -59,12 +61,25 @@ import UIKit
 
       @objc
       private func sendTapped() {
+          let prompt = promptField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+          guard !prompt.isEmpty else { return }
+
           responseView.text = "Loading..."
-          // TODO: Call your chat service and update responseView.text with the returned bars.
+          sendButton.isEnabled = false
+
+          Task { @MainActor in
+              defer { sendButton.isEnabled = true }
+              do {
+                  let reply = try await chatService.respond(to: prompt)
+                  responseView.text = reply.isEmpty ? "No response received." : reply
+              } catch {
+                  responseView.text = "Error: \(error.localizedDescription)"
+              }
+          }
       }
   }
 
-#Preview {
-    ViewController()
-}
+//#Preview {
+//    ViewController()
+//}
 
